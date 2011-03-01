@@ -1,0 +1,34 @@
+2011-02-18:
+ * Save typedtree also for .mli files
+ * Changed extensions:
+    * .cmt for .ml file typedtree
+    * .cmti for .mli file typedtree (containing a non-substituted version of the .cmi)
+
+2010-11-25:
+ * Added command "genannot" to translate a .types file into a .annot file
+    * Some duplicated annotations are removed
+    * Some forgotten annotations have been added
+    * "call(" annotations are not generated
+    * Display warning messages about identifiers without annotations
+       (identifiers bound by "for" and "external")
+ * Removed automatic generation of _ast2src.ml and _typ2src.ml files
+ * Added functor in Typedtree to iter on the typedtree
+
+2010-11-16:
+ * Moved code from typedtree.ml to:
+   * new file parsing/pprintast.ml for pretty-printing of parsetree
+   * new file typing/untypeast.ml for converting Typedtree to Parsetree
+ * Some bug fixes in pretty-printing:
+   * removed spurious colon in first class modules
+   * removed duplicated "object" keyword
+
+2010-11-13:
+ * Introduced new type to save partial typedtrees in case of error:
+    * [| Saved_implementation str |] if no error
+    * An array of Typedtree.Saved_... otherwise
+
+2010-11-11: first version
+ * Applied previous patch from 3.12.0 on trunk release r10789
+ * Fixed two bugs
+ * Improved pretty-printing of parsetree
+ * Pass the testsuite with same results as trunk/, except modified locations
