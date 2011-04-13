@@ -1,0 +1,8 @@
+main
+static
+custom
+*.a
+*.so
+*.result
+*.cm*
+*.o
